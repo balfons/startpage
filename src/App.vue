@@ -20,7 +20,7 @@ const createMagicGrid = (items: number, maxColumns: number): void => {
     magicGrid = new MagicGrid({
       container: '#links',
       items,
-      animate: true,
+      animate: false,
       static: false,
       maxColumns,
       gutter: 0,
@@ -71,7 +71,16 @@ const toggleDarkMode = (darkMode: boolean) => {
     </div>
 
     <div id="links" class="flex max-w-7xl mx-auto w-screen flex-grow">
-      <div v-for="group in selectedLinkPage" :key="group.title" class="p-3 w-1/4">
+      <div
+        v-for="group in selectedLinkPage"
+        :key="group.title"
+        class="
+          p-3
+          w-full
+          sm:w-1/2
+          md:w-1/3
+          lg:w-1/4
+        ">
         <LinkGroup  :linkGroup="group" />
       </div>
     </div>
