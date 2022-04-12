@@ -77,14 +77,13 @@ const toggleDarkMode = (darkMode: boolean) => {
     </div>
 
 
-    <div class="absolute bottom-3 translate-x-1/2 right-1/2 max-w-7xl w-screen">
+    <div class="absolute bottom-3 translate-x-1/2 right-1/2 max-w-7xl max-w-screen">
       <DockNav>
         <template v-slot>
-          <UploadButton class="mr-3">+</UploadButton>
+          <UploadButton>+</UploadButton>
           <Button 
             v-for="linkPageName in linkStore.linkPageNames"
-            :selected="linkPageName === activeLinkPageName"
-            class="mr-2" 
+            :selected="linkPageName === activeLinkPageName" 
             @onClick="changeSelectedLinkPage(linkPageName)">{{linkPageName}}</Button>
         </template>
       </DockNav>
