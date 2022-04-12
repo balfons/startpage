@@ -46,6 +46,9 @@ const emit = defineEmits<{
   @apply
   ring-neutral-400
   ring-offset-neutral-50
+
+  dark:ring-neutral-600
+  dark:ring-offset-neutral-800
   ring-2
   ring-offset-2
 }
