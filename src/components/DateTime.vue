@@ -4,7 +4,7 @@ let dateNow = ref(new Date());
 let dateInterval: number = 0;
 
 onMounted(() => {
-  dateInterval = setInterval(() => {
+  dateInterval = window.setInterval(() => {
     dateNow.value = new Date();
   }, 1000);
 });
