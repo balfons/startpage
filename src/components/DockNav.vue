@@ -17,7 +17,14 @@
     gap-2
     mx-3
     overflow-auto
-    dark:bg-neutral-800 p-3 flex-row border-t border-neutral-900/5 rounded-lg ring-1 ring-neutral-900/5 shadow-lg
+    dark:bg-neutral-800
+    p-3
+    flex-row
+    rounded-lg
+    ring-1
+    dark:ring-neutral-700
+    ring-neutral-900/5
+    shadow-md
 }
 
 </style>

@@ -48,7 +48,7 @@ const emit = defineEmits<{
   ring-offset-neutral-50
   dark:ring-neutral-600
   dark:ring-offset-neutral-800
-  ring-2
+  ring-1
   ring-offset-2
 }
 </style>
