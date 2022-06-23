@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onMounted, ref, watch } from 'vue';
+import { computed, nextTick, onBeforeMount, onMounted, ref, watch } from 'vue';
 import DateTime from './components/DateTime.vue';
 import Toggle from './components/Toggle.vue';
 import LinkGroup from './components/LinkGroup.vue';
@@ -30,7 +30,12 @@ const createMagicGrid = (items: number, maxColumns: number): void => {
     magicGrid.listen()
   }
 
+onBeforeMount(() => {
+  isDarkMode.value = Boolean(Number(localStorage.getItem('darkMode')));
+});
+
 onMounted(() => {
+  toggleDarkMode(isDarkMode.value);
   createMagicGrid(selectedLinkPage.value.length, 4)
 });
 
@@ -57,6 +62,8 @@ const toggleDarkMode = (darkMode: boolean) => {
   } else {
     document.documentElement.classList.remove('dark');
   }
+
+  localStorage.setItem('darkMode', String(Number(darkMode)))
 }
 </script>
 
